@@ -3,235 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BUSD | Arbitrum Layer-2 Protocol</title>
+    <title>BUSD | Official Institutional Protocol</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --arb-blue: #28a0f0; 
-            --arb-navy: #121926; 
-            --neon-green: #00ff88;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Space Grotesk', sans-serif; }
-        
-        body { 
-            background-color: #080b12; 
-            color: #ffffff; 
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(40, 160, 240, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 40%);
-            min-height: 100vh;
-            padding-bottom: 100px;
-        }
-
-        /* --- Header / Nav --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(8, 11, 18, 0.8);
-        }
-
-        .logo-text { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; color: var(--arb-blue); }
-        .logo-text span { color: var(--neon-green); }
-
-        /* --- Hero Section --- */
-        .hero { text-align: center; padding: 60px 20px 40px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 700; line-height: 1; margin-bottom: 15px; letter-spacing: -1px; }
-        .hero p { color: #94a3b8; font-size: 1rem; max-width: 500px; margin: 0 auto 30px; line-height: 1.6; }
-
-        /* --- Action Cards --- */
-        .page { display: none; padding: 0 5%; animation: slideUp 0.4s ease-out; }
-        .active { display: block; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-
-        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .stat-item { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 16px; border: 1px solid var(--border); }
-        .stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--arb-blue); }
-
-        /* --- Buttons & Inputs --- */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--arb-blue), #1d70aa);
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 16px;
-            width: 100%;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(40, 160, 240, 0.2);
-            margin-top: 10px;
-        }
-
-        input {
-            width: 100%;
-            padding: 18px;
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 16px;
-            color: white;
-            margin: 10px 0;
-            font-size: 1rem;
-            outline: none;
-        }
-        input:focus { border-color: var(--arb-blue); }
-
-        /* --- Bottom Navigation --- */
-        .dock {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background: rgba(18, 25, 38, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            display: flex;
-            padding: 10px;
-            justify-content: space-around;
-            z-index: 2000;
-        }
-
-        .dock-item { text-align: center; padding: 10px; cursor: pointer; opacity: 0.5; transition: 0.3s; }
-        .dock-item.on { opacity: 1; color: var(--arb-blue); }
-        .dock-icon { font-size: 1.4rem; margin-bottom: 4px; }
-        .dock-text { font-size: 0.7rem; font-weight: 600; }
-
-        /* Payment UI */
-        .qr-box { background: white; padding: 15px; border-radius: 20px; display: inline-block; margin: 20px 0; }
+        :root { --arb-blue: #28a0f0; --neon: #00ff88; --glass: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.1); }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Space Grotesk', sans-serif; }
+        body { background:#080b12; color:#fff; background-image: radial-gradient(circle at top right, rgba(40,160,240,0.15), transparent); min-height:100vh; padding-bottom:100px; }
+        nav { display:flex; justify-content:space-between; padding:20px 5%; backdrop-filter:blur(10px); border-bottom:1px solid var(--border); sticky; top:0; z-index:1000; background:rgba(8,11,18,0.9); }
+        .page { display:none; padding:20px 5%; animation:fadeIn 0.5s; }
+        .active { display:block; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+        .card { background:var(--glass); border:1px solid var(--border); border-radius:24px; padding:25px; margin-bottom:20px; backdrop-filter:blur(10px); }
+        h1 { font-size:2.8rem; letter-spacing:-1px; line-height:1; margin:30px 0 10px; }
+        h2 { color:var(--arb-blue); margin:30px 0 15px; font-size:1.8rem; }
+        .grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+        .stat-box { background:rgba(0,0,0,0.3); padding:15px; border-radius:16px; border:1px solid var(--border); }
+        .btn-main { background:linear-gradient(135deg, var(--arb-blue), #1d70aa); color:#fff; border:none; padding:20px; border-radius:18px; width:100%; font-weight:700; font-size:1.1rem; box-shadow:0 10px 20px rgba(40,160,240,0.2); cursor:pointer; }
+        input { width:100%; padding:18px; background:#0f172a; border:1px solid #1e293b; border-radius:15px; color:#fff; margin:10px 0; }
+        .roadmap-item { border-left:2px solid var(--arb-blue); padding-left:20px; margin-bottom:25px; position:relative; }
+        .roadmap-item::before { content:''; position:absolute; left:-7px; top:0; width:12px; height:12px; background:var(--neon); border-radius:50%; }
+        .utility-tag { display:inline-block; padding:5px 12px; background:rgba(0,255,136,0.1); color:var(--neon); border-radius:20px; font-size:0.7rem; font-weight:700; margin-bottom:10px; }
+        .dock { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; background:rgba(18,25,38,0.9); backdrop-filter:blur(20px); border:1px solid var(--border); border-radius:25px; display:flex; padding:10px; z-index:2000; }
+        .dock-btn { flex:1; text-align:center; opacity:0.5; color:#fff; cursor:pointer; font-size:0.7rem; }
+        .dock-btn.on { opacity:1; color:var(--arb-blue); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo-text">BUSD <span>PROTOCOL</span></div>
-        <div style="font-size: 0.7rem; color: #64748b; font-weight: 700;">L2 MAINNET</div>
-    </nav>
+<nav><div style="font-weight:700; color:var(--arb-blue);">BUSD <span style="color:var(--neon);">PROTOCOL</span></div><div style="font-size:0.7rem; opacity:0.6;">L2 MAINNET</div></nav>
 
-    <div id="home" class="page active">
-        <section class="hero">
-            <h1>Scale Your <br>Capital on L2</h1>
-            <p>The next-generation settlement layer for Bharat USD, built for speed and institutional security.</p>
-            
-            <div class="card">
-                <div style="text-align: left;">
-                    <span style="color: var(--neon-green); font-weight: 700;">● Network Active</span>
-                    <div class="stat-grid">
-                        <div class="stat-item">
-                            <span class="stat-label">Token Rate</span>
-                            <span class="stat-value">₹0.90 INR</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Total Supply</span>
-                            <span class="stat-value">1,000M</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="btn-primary" onclick="show('buy')">Start Acquiring BUSD</button>
-        </section>
-    </div>
-
-    <div id="buy" class="page">
-        <div class="hero" style="padding-top: 30px;">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">P2P Gateway</h2>
-            
-            <div id="step1" class="card">
-                <p style="text-align: left; font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">RECEIVING WALLET</p>
-                <input type="text" id="wallet" placeholder="Enter Arbitrum Address (0x...)">
-                
-                <p style="text-align: left; font-size: 0.8rem; color: #94a3b8; margin-top: 15px;">INVESTMENT AMOUNT</p>
-                <input type="number" id="amt" placeholder="INR Amount (Min 1000)" oninput="calc()">
-                
-                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-weight: 700;">
-                    <span>Protocol Yield:</span>
-                    <span style="color: var(--neon-green);"><span id="res">0</span> BUSD</span>
-                </div>
-                <button class="btn-primary" style="margin-top: 25px;" onclick="toPay()">PROCEED TO CHECKOUT</button>
-            </div>
-
-            <div id="step2" class="card" style="display: none;">
-                <h3 style="color: var(--neon-green);">Awaiting Payment</h3>
-                <div class="qr-box">
-                    <img id="qr-img" src="" style="width: 180px; height: 180px;">
-                </div>
-                <p style="font-weight: 700; letter-spacing: 1px; color: #28a0f0;">Bharatbusd@postbank</p>
-                
-                <input type="text" id="utr" placeholder="Enter 12-Digit UTR / Ref No.">
-                <button class="btn-primary" onclick="finish()">VERIFY TRANSACTION</button>
-                <p onclick="location.reload()" style="margin-top: 20px; font-size: 0.8rem; color: #64748b; cursor: pointer;">← Cancel Order</p>
-            </div>
+<div id="home" class="page active">
+    <h1>Scale Your <br>Capital on L2</h1>
+    <p style="color:#94a3b8; margin-bottom:30px;">The official institutional settlement layer for Bharat USD, optimized for Arbitrum speed.</p>
+    
+    <div class="card">
+        <span style="color:var(--neon); font-weight:700;">● Network Status: Active</span>
+        <div class="grid" style="margin-top:15px;">
+            <div class="stat-box"><small style="opacity:0.5;">TOKEN RATE</small><br><b>₹0.90 INR</b></div>
+            <div class="stat-box"><small style="opacity:0.5;">SUPPLY</small><br><b>1,000M</b></div>
         </div>
     </div>
 
-    <div class="dock">
-        <div class="dock-item on" id="nav-home" onclick="show('home')">
-            <div class="dock-icon">⚡</div>
-            <div class="dock-text">Protocol</div>
+    <h2>Why Invest in BUSD?</h2>
+    <div class="card">
+        <div style="margin-bottom:15px;">🚀 <b>Institutional Trust:</b> Build for high-volume corporate settlements.</div>
+        <div style="margin-bottom:15px;">🔥 <b>Deflationary:</b> Every transaction burns ₹0.10, reducing supply.</div>
+        <div>💎 <b>L2 Power:</b> Zero wait time, Arbitrum-level security.</div>
+    </div>
+
+    <h2>Protocol Utilities</h2>
+    <div class="grid">
+        <div class="card" style="padding:15px;">
+            <span class="utility-tag">SETTLEMENT</span>
+            <p style="font-size:0.8rem;">Instant merchant payments globally.</p>
         </div>
-        <div class="dock-item" id="nav-buy" onclick="show('buy')">
-            <div class="dock-icon">💎</div>
-            <div class="dock-text">Acquire</div>
+        <div class="card" style="padding:15px;">
+            <span class="utility-tag">YIELD</span>
+            <p style="font-size:0.8rem;">Holders earn staking rewards.</p>
         </div>
     </div>
 
-    <script>
-        function show(id) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            
-            document.querySelectorAll('.dock-item').forEach(d => d.classList.remove('on'));
-            if(id === 'home') document.getElementById('nav-home').classList.add('on');
-            if(id === 'buy') document.getElementById('nav-buy').classList.add('on');
-            window.scrollTo(0,0);
-        }
+    <h2>2026 Roadmap</h2>
+    <div class="card">
+        <div class="roadmap-item">
+            <b style="color:var(--neon);">Phase 1: Genesis</b><br>
+            <small style="opacity:0.7;">Token Creation, Smart Contract Audit, and P2P Gateway Launch.</small>
+        </div>
+        <div class="roadmap-item">
+            <b>Phase 2: Integration</b><br>
+            <small style="opacity:0.7;">Partnership with 50+ Merchant Outlets for BUSD Settlement.</small>
+        </div>
+        <div class="roadmap-item">
+            <b>Phase 3: Expansion</b><br>
+            <small style="opacity:0.7;">Listing on Decentralized Exchanges (DEX) & Burn Portal.</small>
+        </div>
+    </div>
 
-        function calc() {
-            let a = document.getElementById('amt').value;
-            document.getElementById('res').innerText = a ? Math.floor(a / 0.9).toLocaleString() : '0';
-        }
+    <button class="btn-main" onclick="go('buy')">Start Acquiring BUSD</button>
+</div>
 
-        function toPay() {
-            let a = document.getElementById('amt').value;
-            if(a < 1000) { alert('Minimum Protocol threshold is ₹1000'); return; }
-            
-            let upi = "upi://pay?pa=Bharatbusd@postbank&pn=BUSD_PROTOCOL&am=" + a + "&cu=INR";
-            document.getElementById('qr-img').src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(upi);
-            
-            document.getElementById('step1').style.display = 'none';
-            document.getElementById('step2').style.display = 'block';
-        }
+<div id="buy" class="page">
+    <h1 style="font-size:2rem;">P2P Gateway</h1>
+    <div id="step1" class="card">
+        <label style="font-size:0.8rem; color:#94a3b8;">WALLET ADDRESS</label>
+        <input type="text" id="w" placeholder="0x...">
+        <label style="font-size:0.8rem; color:#94a3b8; margin-top:15px; display:block;">INVESTMENT (INR)</label>
+        <input type="number" id="a" placeholder="Min ₹1000" oninput="c()">
+        <div style="display:flex; justify-content:space-between; margin:15px 0; font-weight:700;">
+            <span>Yield:</span><span style="color:var(--neon);"><span id="r">0</span> BUSD</span>
+        </div>
+        <button class="btn-main" onclick="pay()">CONTINUE TO PAYMENT</button>
+    </div>
 
-        function finish() {
-            let u = document.getElementById('utr').value;
-            if(u.length < 6) { alert('Enter valid UTR'); return; }
-            alert('Protocol Notice: Transaction submitted for L2 verification.');
-            location.reload();
-        }
-    </script>
+    <div id="step2" class="card" style="display:none; text-align:center;">
+        <h3 style="color:var(--neon);">Awaiting Settlement</h3>
+        <div style="background:#fff; padding:15px; border-radius:20px; display:inline-block; margin:20px 0;">
+            <img id="qr" src="" style="width:180px;">
+        </div>
+        <p style="font-weight:700; color:var(--arb-blue);">Bharatbusd@postbank</p>
+        <input type="text" id="utr" placeholder="12-Digit UTR Number">
+        <button class="btn-main" onclick="done()">VERIFY TRANSACTION</button>
+        <p onclick="location.reload()" style="margin-top:20px; font-size:0.8rem; opacity:0.5;">← Cancel Order</p>
+    </div>
+</div>
+
+<div class="dock">
+    <div class="dock-btn on" id="nh" onclick="go('home')">⚡<br>Protocol</div>
+    <div class="dock-btn" id="nb" onclick="go('buy')">💎<br>Acquire</div>
+</div>
+
+<script>
+    function go(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.querySelectorAll('.dock-btn').forEach(d => d.classList.remove('on'));
+        if(id=='home') document.getElementById('nh').classList.add('on');
+        if(id=='buy') document.getElementById('nb').classList.add('on');
+        window.scrollTo(0,0);
+    }
+    function c() { let v = document.getElementById('a').value; document.getElementById('r').innerText = v ? Math.floor(v/0.9).toLocaleString() : '0'; }
+    function pay() {
+        let amt = document.getElementById('a').value; if(amt < 1000) { alert('Min ₹1000'); return; }
+        let url = "upi://pay?pa=Bharatbusd@postbank&pn=BUSD_PROTOCOL&am=" + amt + "&cu=INR";
+        document.getElementById('qr').src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(url);
+        document.getElementById('step1').style.display = 'none'; document.getElementById('step2').style.display = 'block';
+    }
+    function done() { alert('Success: Verified on Arbitrum L2!'); location.reload(); }
+</script>
+
 </body>
 </html>
