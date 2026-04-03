@@ -9,7 +9,7 @@
         :root { --arb-blue: #28a0f0; --neon: #00ff88; --glass: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.1); }
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Space Grotesk', sans-serif; }
         body { background:#080b12; color:#fff; background-image: radial-gradient(circle at top right, rgba(40,160,240,0.15), transparent); min-height:100vh; padding-bottom:100px; }
-        nav { display:flex; justify-content:space-between; padding:20px 5%; backdrop-filter:blur(10px); border-bottom:1px solid var(--border); sticky; top:0; z-index:1000; background:rgba(8,11,18,0.9); }
+        nav { display:flex; justify-content:space-between; padding:20px 5%; backdrop-filter:blur(10px); border-bottom:1px solid var(--border); position: sticky; top:0; z-index:1000; background:rgba(8,11,18,0.9); }
         .page { display:none; padding:20px 5%; animation:fadeIn 0.5s; }
         .active { display:block; }
         @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
@@ -19,6 +19,7 @@
         .grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
         .stat-box { background:rgba(0,0,0,0.3); padding:15px; border-radius:16px; border:1px solid var(--border); }
         .btn-main { background:linear-gradient(135deg, var(--arb-blue), #1d70aa); color:#fff; border:none; padding:20px; border-radius:18px; width:100%; font-weight:700; font-size:1.1rem; box-shadow:0 10px 20px rgba(40,160,240,0.2); cursor:pointer; }
+        .btn-outline { background:var(--glass); border:1px solid var(--neon); color:var(--neon); padding:15px; border-radius:18px; width:100%; font-weight:700; font-size:1rem; cursor:pointer; margin-bottom:15px; }
         input { width:100%; padding:18px; background:#0f172a; border:1px solid #1e293b; border-radius:15px; color:#fff; margin:10px 0; }
         .roadmap-item { border-left:2px solid var(--arb-blue); padding-left:20px; margin-bottom:25px; position:relative; }
         .roadmap-item::before { content:''; position:absolute; left:-7px; top:0; width:12px; height:12px; background:var(--neon); border-radius:50%; }
@@ -46,7 +47,7 @@
 
     <h2>Why Invest in BUSD?</h2>
     <div class="card">
-        <div style="margin-bottom:15px;">🚀 <b>Institutional Trust:</b> Build for high-volume corporate settlements.</div>
+        <div style="margin-bottom:15px;">🚀 <b>Institutional Trust:</b> Built for high-volume corporate settlements.</div>
         <div style="margin-bottom:15px;">🔥 <b>Deflationary:</b> Every transaction burns ₹0.10, reducing supply.</div>
         <div>💎 <b>L2 Power:</b> Zero wait time, Arbitrum-level security.</div>
     </div>
@@ -71,15 +72,16 @@
         </div>
         <div class="roadmap-item">
             <b>Phase 2: Integration</b><br>
-            <small style="opacity:0.7;">Partnership with 50+ Merchant Outlets for BUSD Settlement.</small>
-        </div>
-        <div class="roadmap-item">
-            <b>Phase 3: Expansion</b><br>
-            <small style="opacity:0.7;">Listing on Decentralized Exchanges (DEX) & Burn Portal.</small>
+            <small style="opacity:0.7;">Partnership with 100+ Merchant Outlets for BUSD Settlement.</small>
         </div>
     </div>
 
-    <button class="btn-main" onclick="go('buy')">Start Acquiring BUSD</button>
+    <button class="btn-outline" onclick="location.href='whitepaper.html'">
+        📄 VIEW OFFICIAL WHITEPAPER
+    </button>
+    <button class="btn-main" onclick="go('buy')">
+        Start Acquiring BUSD
+    </button>
 </div>
 
 <div id="buy" class="page">
@@ -103,7 +105,7 @@
         <p style="font-weight:700; color:var(--arb-blue);">Bharatbusd@postbank</p>
         <input type="text" id="utr" placeholder="12-Digit UTR Number">
         <button class="btn-main" onclick="done()">VERIFY TRANSACTION</button>
-        <p onclick="location.reload()" style="margin-top:20px; font-size:0.8rem; opacity:0.5;">← Cancel Order</p>
+        <p onclick="location.reload()" style="margin-top:20px; font-size:0.8rem; opacity:0.5; cursor:pointer;">← Cancel Order</p>
     </div>
 </div>
 
