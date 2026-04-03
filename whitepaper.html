@@ -3,55 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUSD | Official Whitepaper</title>
+    <title>BUSD | Institutional Whitepaper</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #080b12; color: #fff; font-family: 'Space Grotesk', sans-serif; padding: 30px 15px; line-height: 1.6; }
-        .paper { max-width: 600px; margin: auto; border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.02); backdrop-filter: blur(10px); }
-        .logo { color: #28a0f0; font-weight: 700; font-size: 1.5rem; text-align: center; margin-bottom: 30px; }
-        .logo span { color: #00ff88; }
-        h1 { font-size: 1.8rem; color: #00ff88; text-align: center; margin-bottom: 20px; }
-        h2 { color: #28a0f0; border-left: 3px solid #00ff88; padding-left: 10px; margin-top: 30px; font-size: 1.2rem; }
-        .box { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; margin-top: 10px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.05); }
-        table { width: 100%; margin-top: 15px; border-collapse: collapse; font-size: 0.85rem; }
-        td, th { text-align: left; padding: 10px; border-bottom: 1px solid #222; }
-        th { color: #00ff88; }
-        .btn-back { display: inline-block; color: #00ff88; text-decoration: none; font-size: 0.9rem; margin-bottom: 20px; font-weight: bold; }
+        :root { --arb-blue: #28a0f0; --neon: #00ff88; --glass: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.1); }
+        body { background: #080b12; color: #fff; font-family: 'Space Grotesk', sans-serif; margin: 0; padding: 20px; line-height: 1.6; background-image: radial-gradient(circle at top right, rgba(0, 255, 136, 0.05), transparent); }
+        .page-card { max-width: 600px; margin: 20px auto; border: 1px solid var(--border); padding: 30px; border-radius: 24px; background: var(--glass); backdrop-filter: blur(15px); position: relative; overflow: hidden; }
+        .page-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--neon); }
+        .page-num { font-size: 0.7rem; color: var(--neon); font-weight: 700; letter-spacing: 2px; }
+        h1 { font-size: 2rem; color: #fff; margin: 10px 0; letter-spacing: -1px; }
+        h2 { color: var(--arb-blue); font-size: 1.2rem; margin-top: 25px; text-transform: uppercase; }
+        .accent { color: var(--neon); font-weight: 700; }
+        .btn-back { display: block; text-align: center; color: var(--arb-blue); text-decoration: none; margin: 20px 0; font-weight: 700; font-size: 0.9rem; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .stat-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 16px; border: 1px solid var(--border); }
     </style>
 </head>
 <body>
-    <a href="index.html" class="btn-back">← Back to Protocol</a>
-    <div class="paper">
-        <div class="logo">BUSD <span>PROTOCOL</span></div>
-        <h1>Official One-Pager</h1>
-        
-        <h2>1. Abstract</h2>
-        <p>Bharat USD (BUSD) is an institutional-grade settlement asset on the Arbitrum L2 network. It bridges the gap between Indian retail and DeFi efficiency.</p>
 
-        <h2>2. Problem & Solution</h2>
-        <div class="box">
-            <b>Problem:</b> High gas fees and slow confirmations.<br><br>
-            <b>Solution:</b> BUSD offers <2s settlement time and near-zero fees using Arbitrum Nitro technology.
+    <a href="index.html" class="btn-back">← EXIT TO PROTOCOL</a>
+
+    <div class="page-card">
+        <div class="page-num">01 / GENESIS</div>
+        <h1>Scaling India's <br>Capital on L2</h1>
+        <p>Bharat USD (BUSD) is the first institutional-grade settlement layer optimized for the <span class="accent">Arbitrum Nitro</span> ecosystem.</p>
+        <div class="stat-grid">
+            <div class="stat-item"><small>NETWORK</small><br><b>Arbitrum One</b></div>
+            <div class="stat-item"><small>ASSET TYPE</small><br><b>Settlement</b></div>
         </div>
-
-        <h2>3. Tokenomics</h2>
-        <table>
-            <tr><th>Metric</th><th>Details</th></tr>
-            <tr><td>Total Supply</td><td>1,000,000,000 BUSD</td></tr>
-            <tr><td>Network</td><td>Arbitrum One (L2)</td></tr>
-            <tr><td>Burn Mechanism</td><td>₹0.10 Per Transaction</td></tr>
-            <tr><td>Founders Lock</td><td>100M (24 Months)</td></tr>
-        </table>
-
-        <h2>4. 2026 Roadmap</h2>
-        <div class="box">
-            • <b>Phase 1:</b> Genesis Launch (Active)<br>
-            • <b>Phase 2:</b> 100+ Merchant Integration<br>
-            • <b>Phase 3:</b> DEX Listing (Uniswap)<br>
-            • <b>Phase 4:</b> BUSD Mobile App Launch
-        </div>
-
-        <p style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.7rem;">© 2026 BUSD TEAM. All Rights Reserved.</p>
     </div>
+
+    <div class="page-card" style="border-color: rgba(255, 0, 0, 0.2);">
+        <div class="page-num" style="color: #ff4444;">02 / THE GAP</div>
+        <h1>The Legacy Problem</h1>
+        <p>Current blockchain payments are <span style="color:#ff4444;">too slow</span> and <span style="color:#ff4444;">too expensive</span> for real-world retail in India.</p>
+        <h2>BUSD Solution:</h2>
+        <ul>
+            <li><span class="accent">Speed:</span> Settlement in < 2 seconds.</li>
+            <li><span class="accent">Cost:</span> 95% lower than Ethereum L1.</li>
+        </ul>
+    </div>
+
+    <div class="page-card">
+        <div class="page-num">03 / TOKENOMICS</div>
+        <h1>Supply & Scarcity</h1>
+        <p>A deflationary engine designed to reward early adopters through institutional spend.</p>
+        <div class="stat-grid">
+            <div class="stat-item"><small>TOTAL SUPPLY</small><br><b>1,000,000,000</b></div>
+            <div class="stat-item"><small>BURN RATE</small><br><b class="accent">₹0.10 / TX</b></div>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.6;">*Every transaction reduces total supply, increasing rarity.</p>
+    </div>
+
+    <div class="page-card">
+        <div class="page-num">04 / STRATEGY</div>
+        <h1>2026 Roadmap</h1>
+        <h2>PHASE 1: GENESIS</h2>
+        <p>L2 Deployment & P2P Gateway Activation.</p>
+        <h2>PHASE 2: MERCHANT</h2>
+        <p>Onboarding 100+ local outlets for BUSD payments.</p>
+        <h2>PHASE 3: LISTING</h2>
+        <p>Decentralized Exchange (DEX) liquidity pool launch.</p>
+    </div>
+
+    <div style="text-align:center; padding: 40px; opacity: 0.3; font-size: 0.7rem;">
+        © 2026 BUSD PROTOCOL TEAM | CONFIDENTIAL DOCUMENT
+    </div>
+
 </body>
 </html>
